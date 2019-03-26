@@ -1,0 +1,35 @@
+---create table
+create table users (
+	id int(9) not null PRIMARY KEY AUTO_INCREMENT,
+    email varchar(48) not null,
+    nickname varchar(30) not null,
+    password varchar(48) not null
+);
+
+create table funds (
+	id int(9) not null PRIMARY KEY AUTO_INCREMENT,
+    bank int(9) not null,
+    card int(9) not null
+);
+
+create table transactions (
+	sender int(9) not null PRIMARY KEY,
+    receiver int(9) not null,
+    date varchar(10) not null,
+    view boolean not null
+);
+
+---insert
+insert into users (email, nickname, password) VALUES ('basilisvirus@hotmail.com', 'Basilisvirus', '026813_virus');
+
+---update table
+UPDATE users
+SET nickname = 'Christianidis Vasileios'
+WHERE id = '1';
+
+--delete rows
+DELETE FROM users
+WHERE id='1';
+
+--ordering
+SELECT * FROM users ORDER BY id ASC;
